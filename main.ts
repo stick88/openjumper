@@ -119,7 +119,7 @@ namespace motor {
         let buf = pins.createBuffer(2)
         buf[0] = reg
         buf[1] = value
-        pins.i2cWriteBuffer(addr, buf)
+        pins.i2cWriteBuffer(addr, buf,false)
     }
 
     function i2cCmd(addr: number, value: number) {
@@ -166,7 +166,7 @@ namespace motor {
         buf[2] = (on >> 8) & 0xff;
         buf[3] = off & 0xff;
         buf[4] = (off >> 8) & 0xff;
-        pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
+        pins.i2cWriteBuffer(PCA9685_ADDRESS, buf,false);
     }
 
 
